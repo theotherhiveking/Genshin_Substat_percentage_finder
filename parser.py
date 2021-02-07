@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 import json
-from itertools import groupby
-from operator import itemgetter
 import csv
-import sys
 
 with open("ReliquaryAffixExcelConfigData.json") as f:
     data = json.load(f)
