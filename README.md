@@ -1,1 +1,0 @@
-# Genshin_Substat_percentage_finder
