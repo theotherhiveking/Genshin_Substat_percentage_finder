@@ -20,11 +20,11 @@ with open("ReliquaryAffixExcelConfigData.json") as f:
         substat_dict = {}
         for substat in substats:
             if substat == mainstat:
-                pass
-
-            total_weight_excluding_mainstat = sum(r["Weight"] for r in data if r["PropType"] != substat)
-            total_substat_weight = sum(r["Weight"] for r in data if r["PropType"] == substat)
-            substat_dict[substat.replace("FIGHT_PROP_", "")] = (total_substat_weight/total_weight_excluding_mainstat)*100
+                substat_dict[substat.replace("FIGHT_PROP_", "")] = 0
+            else:
+                total_weight_excluding_mainstat = sum(r["Weight"] for r in data if r["PropType"] != substat)
+                total_substat_weight = sum(r["Weight"] for r in data if r["PropType"] == substat)
+                substat_dict[substat.replace("FIGHT_PROP_", "")] = (total_substat_weight/total_weight_excluding_mainstat)*100
 
         weights[mainstat.replace("FIGHT_PROP_", "")] = substat_dict
 
